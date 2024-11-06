@@ -3,5 +3,5 @@
  */
 
 module.exports = {
-  branches: ['release', { name: 'main', prerelease: true }],
+  branches: ['release', { name: 'main', prerelease: 'next' }],
 };

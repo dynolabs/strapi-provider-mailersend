@@ -33,14 +33,17 @@ const main = {
   provider: 'strapi-provider-mailersend',
   name: 'MailerSend Provider',
   init(providerOptions: TProviderOptions, settings: TSettings) {
+    // Assert the providerOptions are valid
     assert(providerOptions.apiKey, 'Mailersend API key is required');
 
+    // Initialize the provider
     const mailerSend = new MailerSend({
       apiKey: providerOptions.apiKey,
     });
 
     return {
       async send(options: TSendOptions) {
+        // Parsing emails to extract name and email
         const parsedFrom = parseEmail(options.from ?? settings.defaultFrom);
         const parsedReplyTo = parseEmail(options.replyTo ?? settings.defaultReplyTo);
         const parsedTo = parseEmail(options.to);
