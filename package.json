@@ -49,14 +49,14 @@
   "description": "MailerSend provider for strapi email plugin",
   "source": "./src/index.ts",
   "types": "./dist/index.d.ts",
-  "homepage": "https://github.com/Dulajdeshan/strapi-provider-mailersend",
-  "readme": "https://github.com/Dulajdeshan/strapi-provider-mailersend#readme",
+  "homepage": "https://github.com/dynolabs/strapi-provider-mailersend",
+  "readme": "https://github.com/dynolabs/strapi-provider-mailersend#readme",
   "bugs": {
-    "url": "https://github.com/Dulajdeshan/strapi-provider-mailersend/issues",
+    "url": "https://github.com/dynolabs/strapi-provider-mailersend/issues",
     "email": "dulajdeshans@gmail.com"
   },
   "repository": {
-    "url": "git+https://github.com/Dulajdeshan/strapi-provider-mailersend.git",
+    "url": "git+https://github.com/dynolabs/strapi-provider-mailersend.git",
     "type": "git",
     "directory": "."
   },

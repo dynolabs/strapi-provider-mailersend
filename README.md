@@ -69,7 +69,7 @@ module.exports = ({ env }) => ({
 
 If you want to say **Thank You** and/or support the active development of `Strapi Provider MailerSend`:
 
-1. Add a [GitHub Star](https://github.com/Dulajdeshan/strapi-provider-mailersend/stargazers) to the project.
+1. Add a [GitHub Star](https://github.com/dynolabs/strapi-provider-mailersend/stargazers) to the project.
 2. Support the project by donating a [cup of coffee](https://buymeacoff.ee/dulajdeshan).
 
 ## 🧾 License
