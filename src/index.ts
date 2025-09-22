@@ -1,6 +1,5 @@
 import assert from 'node:assert';
-import { MailerSend, EmailParams, Sender, Recipient, MailerSendConfig } from 'mailersend';
-
+import { MailerSend, EmailParams, Sender, Recipient, MailerSendConfig, Attachment } from 'mailersend';
 import { parseEmail } from './utils/parseEmail';
 
 type TProviderOptions = MailerSendConfig;
@@ -14,6 +13,12 @@ type TSendOptions = {
   subject: string;
   text: string;
   html: string;
+  attachments?: {
+    content: string,
+    filename: string,
+    disposition?: "inline" | "attachment",
+    id?: string
+  }[];
   [key: string]: unknown;
 };
 
@@ -54,13 +59,16 @@ const main = {
 
         const recipients = [new Recipient(parsedTo.email, parsedTo.name)];
 
+        const attachments = options.attachments?.map((attachment) => new Attachment(attachment.content, attachment.filename, attachment.disposition ?? "attachment")) ?? [];
+
         const emailParams = new EmailParams()
           .setFrom(sentFrom)
           .setTo(recipients)
           .setReplyTo(replyTo)
           .setSubject(options.subject)
           .setHtml(options.html || options.text)
-          .setText(options.text || options.html);
+          .setText(options.text || options.html)
+          .setAttachments(attachments);
 
         try {
           const response = await mailerSend.email.send(emailParams);
